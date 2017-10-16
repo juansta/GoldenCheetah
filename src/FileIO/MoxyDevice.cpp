@@ -418,7 +418,7 @@ MoxyDevice::cleanup( QString &err )
     }
 
     // give it some time to get the work done !
-    sleep(3);
+    QThread::sleep(3);
 
     // exit engineering mode
     if (writeCommand(dev, "exit\r", err) == false) {
@@ -543,7 +543,7 @@ bool
 MoxyDevice::writeCommand(CommPortPtr dev, const char *command, QString &err)
 {
     // on qt4 we need to waste some cycles
-    msleep(100);
+    QThread::msleep(100);
 
     int len = strlen(command);
     int n = dev->write(const_cast<char*>(command), len, err);

@@ -39,7 +39,7 @@ struct MoxyDevices : public Devices
     virtual bool isBikeOnly() { return false; }; // Moxy is multisport
 };
 
-struct MoxyDevice : public Device,QThread
+struct MoxyDevice : public Device
 {
     Q_DECLARE_TR_FUNCTIONS(MoxyDevice)
 
